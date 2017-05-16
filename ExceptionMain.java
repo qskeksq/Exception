@@ -3,7 +3,7 @@ package com.nadan.java.exception;
 public class ExceptionMain {
 	
 	public static void main(String args[]){
-		//try¹® ¶ÇÇÑ ÇÏ³ªÀÇ ºí·°ÀÌ±â ¶§¹®¿¡ ±× ¾È¿¡¼­ ÀÌ°Å ¾²¸é ¹Û¿¡¼­ ¸ø ¾´´Ù
+		//tryë¬¸ ë˜í•œ í•˜ë‚˜ì˜ ë¸”ëŸ­ì´ê¸° ë•Œë¬¸ì— ë¸”ëŸ­ ì•ˆì—ì„œ ì„ ì–¸í•˜ë©´ ë°–ì—ì„œ ëª» ì“´ë‹¤
 		int[] array = new int[6];
 		int i, a;
 		
@@ -13,24 +13,24 @@ public class ExceptionMain {
 			i = 1/0;  //ArithmeticException
 			String s = "a"; //NumberFormatException
 			a = Integer.parseInt(s);
-			System.out.println("½Ã½ºÅÛÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù");
-			//e´Â ¿¹¿ÜÀÇ ÀÌ¸§, º¯¼ö, ½Ã½ºÅÛ¿¡¼­ ´øÁ®ÁÖ´Â ArrayIndexOutOfBoundsException Å¸ÀÔÀÇ º¯¼ö.
-			//ArrayIndexOutOfBoundsException °´Ã¼¿¡ ¿¹¿Ü Å¬·¡½ºÀÇ ¸ğµç °ÍÀÌ Á¤ÀÇµÇ¾î ÀÖ´Ù.
+			System.out.println("ì‹œìŠ¤í…œì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤");
+			//eëŠ” ì˜ˆì™¸ì˜ ì´ë¦„, ë³€ìˆ˜, ì‹œìŠ¤í…œì—ì„œ ë˜ì ¸ì£¼ëŠ” ArrayIndexOutOfBoundsException íƒ€ì…ì˜ ë³€ìˆ˜.
+			//ArrayIndexOutOfBoundsException ê°ì²´ì— ì˜ˆì™¸ í´ë˜ìŠ¤ì˜ ëª¨ë“  ê²ƒì´ ì •ì˜ë˜ì–´ ìˆë‹¤.
 			
-		} catch(ArrayIndexOutOfBoundsException e){ //¹è¿­¼ö¸¦ ¹ş¾î³­ ¿¹¿Ü
+		} catch(ArrayIndexOutOfBoundsException e){ //ë°°ì—´ìˆ˜ë¥¼ ë²—ì–´ë‚œ ì˜ˆì™¸
 			e.printStackTrace();
-		} catch(ArithmeticException e){ //Á¤¼ö¸¦ 0À¸·Î ³ª´« ¿¹¿Ü
+		} catch(ArithmeticException e){ //ì •ìˆ˜ë¥¼ 0ìœ¼ë¡œ ë‚˜ëˆˆ ì˜ˆì™¸
 			e.printStackTrace();
-		} catch(NumberFormatException e){ //¹®ÀÚ¸¦ ¼ıÀÚ·Î ¹Ù²Ù´Â ¿¹¿Ü
+		} catch(NumberFormatException e){ //ë¬¸ìë¥¼ ìˆ«ìë¡œ ë°”ê¾¸ëŠ” ì˜ˆì™¸
 			e.printStackTrace();
-		} finally { //¿À·ù°¡ ³ª´õ¶óµµ ¹İµå½Ã finally¿¡¼­´Â °á°ú°ªÀ» ¸®ÅÏÇÑ´Ù.
+		} finally { //ì˜¤ë¥˜ê°€ ë‚˜ë”ë¼ë„ ë°˜ë“œì‹œ finallyì—ì„œëŠ” ê²°ê³¼ê°’ì„ ë¦¬í„´í•œë‹¤.
 			System.out.println(array[5]);
 		}
 		
-		//try-catchÀÇ ÁÁÀºÁ¡Àº ÀÌ·¸°Ô ¿À·ù°¡ »ı°Üµµ ¾ÛÀÌ ´Ù¿îµÇÁö ¾Ê°í °è¼Ó ½ÇÇàµÈ´Ù´Â °ÍÀÌ´Ù
-		//±Ø´ÜÀûÀ¸·Î´Â ¾Èµå·ÎÀÌµå¸¦ ¸¸µé ¶§ ¸ğµç ¸Ş¼Òµå¸¦ °¨½Ò ¼ö ÀÖ´Ù. ¿Ö³ÄÇÏ¸é ¾îµğ¼­ ¿¹¿Ü°¡ »ı±æÁö ¸ğ¸£±â ¶§¹®ÀÌ´Ù.
+		//try-catchì˜ ì¢‹ì€ì ì€ ì´ë ‡ê²Œ ì˜¤ë¥˜ê°€ ìƒê²¨ë„ ì•±ì´ ë‹¤ìš´ë˜ì§€ ì•Šê³  ê³„ì† ì‹¤í–‰ëœë‹¤ëŠ” ê²ƒì´ë‹¤
+		//ê·¹ë‹¨ì ìœ¼ë¡œëŠ” ì•ˆë“œë¡œì´ë“œë¥¼ ë§Œë“¤ ë•Œ ëª¨ë“  ë©”ì†Œë“œë¥¼ ê°ìŒ€ ìˆ˜ ìˆë‹¤. ì™œëƒí•˜ë©´ ì–´ë””ì„œ ì˜ˆì™¸ê°€ ìƒê¸¸ì§€ ëª¨ë¥´ê¸° ë•Œë¬¸ì´ë‹¤.
 
-		System.out.println("½Ã½ºÅÛÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù");
+		System.out.println("ì‹œìŠ¤í…œì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤");
 		
 		
 	}
